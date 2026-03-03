@@ -1,8 +1,0 @@
-streamlit
-pandas
-scikit-learn
-openai==0.28
-sentence-transformers==2.2.2
-huggingface-hub==0.16.4
-uvicorn
-fastapi

@@ -1,149 +1,131 @@
-🚀 SHL GenAI Assessment Recommender
-Context-Aware Assessment Matching System
+**# 🚀 SHL – Generative AI Assessment Recommendation System
 
-A production-style Generative AI powered recommendation engine that intelligently maps hiring requirements to the most relevant SHL assessments using semantic understanding instead of keyword matching.
+A semantic recommendation engine that intelligently maps hiring queries to the most relevant SHL assessments using contextual language understanding instead of simple keyword matching.
 
-🎯 Problem Statement
+---
 
-Recruiters often struggle to identify the right assessments for a role due to:
+## 📌 Project Overview
 
-Large assessment catalogs
+This system helps recruiters and hiring teams quickly identify the most suitable SHL assessments for a given job description.
 
-Overlapping skill tags
+Instead of relying on keyword filtering, the system understands the **intent and context** of the query using modern NLP embeddings and similarity search.
 
-Manual keyword-based filtering
+---
 
-Lack of contextual understanding
+## 🎯 What This Project Does
 
-This project solves that by introducing semantic similarity search powered by language embeddings.
+- Accepts a **job description / hiring query**
+- Converts text into **dense semantic embeddings**
+- Matches against SHL assessment descriptions
+- Returns **Top-K ranked recommendations**
+- Displays similarity scores for transparency
 
-🧠 System Overview
+---
 
-The system transforms both job descriptions and assessment metadata into vector representations and performs similarity-based retrieval to generate highly relevant recommendations.
+## 🧠 Core Approach
 
-It is built as a complete end-to-end AI application, including:
+### 1️⃣ Semantic Representation
+Assessment descriptions and user queries are converted into vector embeddings using a **Sentence-Transformer model**.
 
-Data extraction & cleaning
+### 2️⃣ Similarity Search
+Cosine similarity is used to retrieve the most relevant assessments via a **Nearest Neighbors index**.
 
-Embedding generation
+### 3️⃣ Intelligent Re-Ranking
+Lightweight domain-aware boosting improves skill-level relevance.
 
-Similarity indexing
+---
 
-Model evaluation
+## 📊 Evaluation
 
-Web-based interface
+The system is evaluated using labeled training queries.
 
-⚙️ How It Works
-1️⃣ Text Embedding
+**Metric Used:**  
+`Recall@10`
 
-All assessment descriptions are encoded into dense vector representations using a pre-trained Sentence-Transformer model.
+The evaluation confirms that the correct assessment appears within the top 10 recommendations for most queries.
 
-2️⃣ Vector Similarity Search
+---
 
-Incoming hiring queries are embedded and matched against stored vectors using cosine similarity via a Nearest Neighbors index.
+## 🖥️ User Interface Features
 
-3️⃣ Lightweight Re-ranking
+Users can:
 
-Domain-aware boosting improves precision by refining skill relevance signals.
+- Enter job descriptions
+- Select number of recommendations
+- View ranked results including:
+  - Assessment Name
+  - Test Type
+  - Skill Tags
+  - Similarity Score
 
-📊 Evaluation Strategy
+The interface is lightweight and optimized for fast testing and demonstration.
 
-The system is validated using labeled training queries.
+---
 
-Metric Used:
-Recall@10
+## 🛠 Technology Stack
 
-This ensures that the correct assessment appears within the top 10 recommendations for the majority of evaluation queries.
+- Python  
+- Flask  
+- Sentence-Transformers  
+- scikit-learn  
+- Pandas  
+- NumPy  
+- HTML / CSS / JavaScript  
 
-🖥️ User Interface
+---
 
-A minimal, interactive browser interface enables:
+## 🗂 Project Structure
 
-Entering job descriptions
 
-Selecting number of recommendations
-
-Viewing ranked results with:
-
-Assessment Name
-
-Test Type
-
-Skill Tags
-
-Similarity Score
-
-The UI is lightweight and designed for fast testing and demonstration.
-
-🗂️ Project Architecture
 SHL-GenAI-Assessment-Recommender/
 │
-├── app.py                     # Flask server & API endpoint
-├── build_index.py             # Embedding + NN index builder
-├── clean_catalog.py           # Data cleaning pipeline
-├── retrieve_test.py           # CLI testing utility
+├── app.py # Flask API & recommendation logic
+├── build_index.py # Embedding + NN index builder
+├── clean_catalog.py # Data cleaning pipeline
+├── retrieve_test.py # CLI testing utility
 │
 ├── data/
-│   ├── catalog_clean.csv
-│   ├── embeddings.npy
-│   ├── metadata.csv
-│   └── nn_model.joblib
+│ ├── catalog_clean.csv
+│ ├── embeddings.npy
+│ ├── metadata.csv
+│ └── nn_model.joblib
 │
 ├── templates/
-│   └── index.html
+│ └── index.html
 │
 ├── static/
-│   ├── script.js
-│   └── styles.css
+│ ├── script.js
+│ └── styles.css
 │
 └── README.md
-🛠 Technology Stack
 
-Python
 
-Flask
+---
 
-Sentence-Transformers
+## ✨ Key Highlights
 
-scikit-learn
+- Context-aware semantic matching  
+- Modular and clean architecture  
+- Fast inference using pre-built index  
+- Easy to extend with new assessments  
+- Separation of data, model, and UI layers  
 
-Pandas / NumPy
+---
 
-HTML / CSS / JavaScript
+## 📌 Practical Applications
 
-✨ Key Strengths
+This system can be used by:
 
-✔ Context-aware semantic matching
-✔ Modular architecture
-✔ Fast inference using pre-built index
-✔ Easy catalog extensibility
-✔ Clean separation between backend and UI
+- Recruiters  
+- Talent Acquisition Teams  
+- HR Technology Platforms  
+- Assessment Vendors  
 
-📌 Practical Applications
+to efficiently shortlist relevant assessments for specific roles.
 
-This system can support:
+---
 
-Talent Acquisition Teams
+## 👨‍💻 Developed By
 
-Recruitment Agencies
-
-HR Technology Platforms
-
-Assessment Providers
-
-by significantly reducing manual effort in test selection.
-
-🔮 Future Enhancements
-
-Hybrid keyword + semantic scoring
-
-Feedback-based learning loop
-
-FAISS indexing for large-scale catalogs
-
-REST API deployment for enterprise integration
-
-👨‍💻 Developed By
-
-Mohammad Khadar Fhareed
-SHL Research Engineer Assessment Submission
+**Mohammad Khadar Fhareed**  
+SHL Research Engineer – Assessment Submission**

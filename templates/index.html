@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>SHL Assessment Recommender</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>SHL Assessment Recommender</h1>
+    <span class="badge">AI Powered</span>
+  </div>
+
+  <p class="subtitle">
+    Paste a job description and instantly discover the most relevant SHL assessments.
+  </p>
+
+  <textarea id="query" placeholder="Paste job description here..."></textarea>
+
+  <div class="controls">
+    <label>
+      Top K:
+      <input id="topk" type="number" min="1" max="20" value="7">
+    </label>
+    <button id="btn">🔍 Find Assessments</button>
+  </div>
+
+  <div id="status"></div>
+
+  <table id="results">
+    <thead>
+      <tr>
+        <th>S.NO</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Skills</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+</div>
+
+<!-- Scrolling Credit Bar -->
+<div class="credit-bar">
+  <div class="credit-text">
+    ✨ Developed by <strong>Mohammad Khadar Fhareed</strong> • SHL Research Engineer Assessment Project • AI Powered Recommendation System ✨
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
